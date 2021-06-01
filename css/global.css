@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #3b3b3b;
+  --secondary-color: #dedede;
+}
+
+html {
+  background-color: var(--secondary-color);
+}
+header,
+footer {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}

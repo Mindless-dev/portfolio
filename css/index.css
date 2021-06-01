@@ -1,0 +1,7 @@
+@import url(../css/global.css);
+
+header > a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
