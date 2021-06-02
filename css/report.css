@@ -1,0 +1,77 @@
+.reportContent {
+  display: flex;
+  justify-content: center;
+  max-width: 940px;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px auto;
+  box-shadow: #00000094 0px 3px 6px;
+}
+
+.wp-block-image > img {
+  max-width: 100%;
+  height: auto;
+}
+.wp-block-image {
+  margin: auto;
+}
+
+.reportContent > p,
+.reportContent > h2,
+.reportContent > h3 {
+  max-width: 600px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+.backLinkLayout {
+  max-width: 940px;
+  margin: auto;
+}
+
+.back {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+}
+.back:hover {
+  background-color: black;
+}
+.links {
+  display: flex;
+  justify-content: center;
+}
+.reportContent > a {
+  display: flex;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  max-width: 600px;
+  height: 60px;
+  justify-content: center;
+  line-height: 3.6;
+  margin: 10px;
+}
+.reportContent > a:hover {
+  background-color: black;
+}
+
+@media (min-width: 645px) {
+  .reportContent > a {
+    width: 600px;
+    height: 60px;
+    justify-content: center;
+    line-height: 3.6;
+    margin: 10px auto;
+  }
+  .reportContent > p,
+  .reportContent > h2,
+  .reportContent > h3 {
+    margin: 20px auto;
+  }
+}
