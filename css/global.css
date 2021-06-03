@@ -15,6 +15,16 @@
 html {
   background-color: var(--secondary-color);
 }
+
+.error {
+  display: block;
+  font-size: 1.5em;
+  padding: 20px;
+  text-align: center;
+  border: solid red 1px;
+  margin: 10px;
+}
+
 header,
 footer {
   background-color: var(--primary-color);

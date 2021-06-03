@@ -2,19 +2,24 @@ const url = `https://holmenfrontend.no/portfolioApi/wp-json/wp/v2/posts?_embed`;
 const contentContainer = document.querySelector("#contentWrapper");
 
 async function getProjects() {
-  let response = await fetch(url);
-  let projects = await response.json();
-  contentContainer.innerHTML = "";
-  console.log(projects);
-  createHTML(projects);
-  const project = document.querySelectorAll(".project");
-  console.log(project);
-  project[0].innerHTML += `<a class="projectLink" href="https://studentcooking2.netlify.app/">Website</a>
-  <a class="projectLink" href="https://github.com/Mindless-dev/StudentCooking">Github</a>`;
-  project[1].innerHTML += `<a class="projectLink" href="https://communityscience.netlify.app/">Website</a>
-  <a class="projectLink" href="https://github.com/Mindless-dev/2020-11-17_semester_project_ca_kenny_andre_holmen_fp">Github</a>`;
-  project[2].innerHTML += `<a class="projectLink" href="https://fileorganizing-gamehub-project.netlify.app/">Website</a>
-  <a class="projectLink" href="https://github.com/Mindless-dev/File-organising-">Github</a>`;
+  try {
+    let response = await fetch(url);
+    let projects = await response.json();
+    contentContainer.innerHTML = "";
+    console.log(projects);
+    createHTML(projects);
+    const project = document.querySelectorAll(".project");
+    console.log(project);
+    project[0].innerHTML += `<a class="projectLink" href="https://studentcooking2.netlify.app/">Website</a>
+    <a class="projectLink" href="https://github.com/Mindless-dev/StudentCooking">Github</a>`;
+    project[1].innerHTML += `<a class="projectLink" href="https://communityscience.netlify.app/">Website</a>
+    <a class="projectLink" href="https://github.com/Mindless-dev/2020-11-17_semester_project_ca_kenny_andre_holmen_fp">Github</a>`;
+    project[2].innerHTML += `<a class="projectLink" href="https://fileorganizing-gamehub-project.netlify.app/">Website</a>
+    <a class="projectLink" href="https://github.com/Mindless-dev/File-organising-">Github</a>`;
+  } catch (error) {
+    contentContainer.innerHTML = `<p class="error">An Error has occured please refresh the page<p>`;
+    contentContainer.style.minHeight = "0px";
+  }
 }
 
 getProjects();

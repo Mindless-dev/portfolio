@@ -5,10 +5,14 @@ const url = "https://holmenfrontend.no/portfolioApi/wp-json/wp/v2/posts/" + id;
 const contentWrapper = document.querySelector("#report");
 
 async function getProject() {
-  const response = await fetch(url);
-  const project = await response.json();
-  console.log(project);
-  createHTML(project);
+  try {
+    const response = await fetch(url);
+    const project = await response.json();
+    console.log(project);
+    createHTML(project);
+  } catch {
+    contentWrapper.innerHTML = `<p class="error">An Error has occured please refresh the page<p>`;
+  }
 }
 
 getProject();
