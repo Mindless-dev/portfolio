@@ -6,10 +6,8 @@ async function getProjects() {
     let response = await fetch(url);
     let projects = await response.json();
     contentContainer.innerHTML = "";
-    console.log(projects);
     createHTML(projects);
     const project = document.querySelectorAll(".project");
-    console.log(project);
     project[0].innerHTML += `<a class="projectLink" href="https://studentcooking2.netlify.app/">Website</a>
     <a class="projectLink" href="https://github.com/Mindless-dev/StudentCooking">Github</a>`;
     project[1].innerHTML += `<a class="projectLink" href="https://communityscience.netlify.app/">Website</a>
@@ -26,8 +24,6 @@ getProjects();
 
 function createHTML(projects) {
   for (let i = 0; i < projects.length; i++) {
-    let links = projects[i].excerpt.rendered;
-    console.log(links);
     contentContainer.innerHTML += `
     <section class="project"> 
     <h2>${projects[i].title.rendered}</h2>

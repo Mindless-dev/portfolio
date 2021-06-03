@@ -8,7 +8,6 @@ async function getProject() {
   try {
     const response = await fetch(url);
     const project = await response.json();
-    console.log(project);
     createHTML(project);
   } catch {
     contentWrapper.innerHTML = `<p class="error">An Error has occured please refresh the page<p>`;
@@ -18,8 +17,6 @@ async function getProject() {
 getProject();
 
 function createHTML(project) {
-  console.log(project.title.rendered);
-  console.log(project.content.rendered);
   contentWrapper.innerHTML = `<h1>${
     project.title.rendered + " " + "Report"
   }</h1>
